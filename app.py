@@ -42,10 +42,10 @@ if prompt := st.chat_input():
         placeholder = st.empty()
         placeholder.markdown("...")
         response = bedrock_agent_runtime.invoke_agent(
-            agent_id='GDAN8TALG4',#agent_id,
+            agent_id='GDAN8TALG4', #agent_id,
             agent_alias_id='9OWBDZAJUD', #agent_alias_id,
-            st.session_state.session_id,
-            prompt
+            session_id=st.session_state.session_id,
+            prompt=prompt
         )
         output_text = response["output_text"]
 
